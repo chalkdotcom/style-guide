@@ -3,7 +3,7 @@
 ## Commit Messages
 Inspired by and adapted from [angular.js](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit)
 
-In genral, commit messages should look similar to this
+In general, commit messages should follow this format
 ```
 <type>: <subject>
 <additional info>
