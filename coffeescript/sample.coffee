@@ -6,12 +6,13 @@ define 'pages/some_page/views/SomePageView', ['app'
                                               'shared/modals/modal_name/SomeModal'
                                               'shared/views/view_name/SomeView'
                                               'hbs!pages/some_page/templates/sub_element'
-                                              'hbs!pages/some_page/templates/some_page' # always named 'template'
-                                              'jquery.select-text' # Dependencies that arent specifically defined come last
+                                              'hbs!pages/some_page/templates/some_page' # always 'template'
+                                              'jquery.select-text'
                                               'select2'
                                               'autosize'
-                                              ], (App, Backbone, _, Session, Gritter, SomeModal, SomeView, subElementTemplate, template) ->
-  'use strict'     
+                                              ], (App, Backbone, _, Session, Gritter, SomeModal, SomeView, 
+                                                  subElementTemplate, template) -> # wrap as needed
+  'use strict'
 
   class SubElementView extends Backbone.Marionette.ItemView
     template: subElementTemplate
