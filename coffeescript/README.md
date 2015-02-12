@@ -54,7 +54,7 @@ Use **spaces only**, with **2 spaces** per indentation level. Never mix tabs and
 <a name="maximum_line_length"/>
 ### Maximum Line Length
 
-Limit all lines to a maximum of 79 characters.
+Limit all lines to a maximum of 120 characters.
 
 <a name="blank_lines"/>
 ### Blank Lines
@@ -153,20 +153,6 @@ Additional recommendations:
     - comparisons: `==`, `<`, `>`, `<=`, `>=`, `unless`, etc.
     - arithmetic operators: `+`, `-`, `*`, `/`, etc.
 
-    - _(Do not use more than one space around these operators)_
-
-        ```coffeescript
-           # Yes
-           x = 1
-           y = 1
-           fooBar = 3
-
-           # No
-           x      = 1
-           y      = 1
-           fooBar = 3
-        ```
-
 <a name="comments"/>
 ## Comments
 
@@ -230,17 +216,6 @@ Use `CamelCase` (with a leading uppercase character) to name all classes. _(This
 
 _(The **official** CoffeeScript convention is camelcase, because this simplifies interoperability with JavaScript. For more on this decision, see [here][coffeescript-issue-425].)_
 
-For constants, use all uppercase with underscores:
-
-```coffeescript
-CONSTANT_LIKE_THIS
-```
-
-Methods and variables that are intended to be "private" should begin with a leading underscore:
-
-```coffeescript
-_privateMethod: ->
-```
 
 <a name="functions"/>
 ## Functions
@@ -285,6 +260,11 @@ obj.value(10, 20) / obj.value(20, 10)
 print inspect value
 
 new Tag(new Value(a, b), new Arg(c))
+
+# Special case. Always include brackets for get and set, for consistency and readability.
+# Since there are few brackets in general, this makes it easy to pick out gets and sets from other method calls
+@model.get('property_a')
+@model.get('user_profile').get('name')
 ```
 
 You will sometimes see parentheses used to group functions (instead of being used to group function parameters). Examples of using this style (hereafter referred to as the "function grouping style"):
